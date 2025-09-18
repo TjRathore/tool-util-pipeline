@@ -1,0 +1,101 @@
+{
+  "documents": [
+    {
+      "type": "historical_error",
+      "content": "Error: BigQuery job failed: Access denied to dataset prod-analytics Resolution: Added BigQuery Data Editor role to service account Context: Production data pipeline accessing analytics dataset",
+      "metadata": {
+        "error_type": "permission_denied",
+        "success": true,
+        "resolution_time": 15,
+        "pipeline_id": "",
+        "business_impact": "medium"
+      },
+      "priority": "high",
+      "id": "doc_0_1758105827.794351",
+      "created_at": "2025-09-17T10:43:47.794363"
+    },
+    {
+      "type": "historical_error",
+      "content": "Error: Dataflow job timeout after 60 minutes in region us-central1 Resolution: Increased worker machine type from n1-standard-1 to n1-standard-4 Context: Large dataset processing during peak hours",
+      "metadata": {
+        "error_type": "network_timeout",
+        "success": true,
+        "resolution_time": 45,
+        "pipeline_id": "",
+        "business_impact": "high"
+      },
+      "priority": "high",
+      "id": "doc_1_1758105827.794696",
+      "created_at": "2025-09-17T10:43:47.794703"
+    },
+    {
+      "type": "historical_error",
+      "content": "Error: Cloud Storage upload failed: Insufficient permissions for bucket Resolution: Added Storage Object Creator role to service account Context: Daily backup job writing to storage bucket",
+      "metadata": {
+        "error_type": "permission_denied",
+        "success": true,
+        "resolution_time": 10,
+        "pipeline_id": "",
+        "business_impact": "medium"
+      },
+      "priority": "high",
+      "id": "doc_2_1758105827.794929",
+      "created_at": "2025-09-17T10:43:47.794935"
+    },
+    {
+      "type": "historical_error",
+      "content": "Error: Pub/Sub subscription acknowledgment failed: quota exceeded Resolution: Requested quota increase and implemented message batching Context: High-volume message processing during traffic spike",
+      "metadata": {
+        "error_type": "quota_exceeded",
+        "success": true,
+        "resolution_time": 120,
+        "pipeline_id": "",
+        "business_impact": "critical"
+      },
+      "priority": "high",
+      "id": "doc_3_1758105827.795397",
+      "created_at": "2025-09-17T10:43:47.795403"
+    },
+    {
+      "type": "historical_error",
+      "content": "Error: SQL query failed: table not found in dataset Resolution: Updated table name reference and verified schema Context: Analytics pipeline after table rename",
+      "metadata": {
+        "error_type": "schema_mismatch",
+        "success": true,
+        "resolution_time": 30,
+        "pipeline_id": "",
+        "business_impact": "low"
+      },
+      "priority": "high",
+      "id": "doc_4_1758105827.795826",
+      "created_at": "2025-09-17T10:43:47.795832"
+    },
+    {
+      "type": "runbook",
+      "content": "Title: BigQuery Permission Issues Troubleshooting Description: Step-by-step guide for resolving BigQuery access denied errors Steps: 1. Identify service account used 2. Check current IAM roles 3. Add appropriate BigQuery roles 4. Test access 5. Monitor for 24 hours",
+      "metadata": {
+        "applicable_errors": "permission_denied, authentication_failure",
+        "estimated_time": "15-30 minutes",
+        "automation_available": false
+      },
+      "priority": "high",
+      "id": "doc_5_1758105827.796385",
+      "created_at": "2025-09-17T10:43:47.796391"
+    },
+    {
+      "type": "runbook",
+      "content": "Title: Dataflow Job Performance Optimization Description: Guide for optimizing slow or timing out Dataflow jobs Steps: 1. Check worker resource utilization 2. Analyze data skew patterns 3. Adjust machine types 4. Optimize windowing 5. Enable autoscaling",
+      "metadata": {
+        "applicable_errors": "network_timeout, resource_exhaustion",
+        "estimated_time": "30-60 minutes",
+        "automation_available": false
+      },
+      "priority": "high",
+      "id": "doc_6_1758105827.797108",
+      "created_at": "2025-09-17T10:43:47.797112"
+    }
+  ],
+  "vocabulary_size": 111,
+  "total_documents": 7,
+  "last_updated": "2025-09-17T10:43:47.798436"
+}
